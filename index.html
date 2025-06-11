@@ -23,20 +23,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
      <style>
+* {
+    box-sizing: border-box;
+}
 html, body {
     overflow: hidden;
     border: 0;
     background-color: #131313;
     font-family: Ubuntu Sans, Ubuntu;
-    font-size: 33px;
+    font-size: 15px;
     color: #afafaf;
     scroll-behavior: smooth;
-}
-
-code {
-    font-family: Ubuntu Mono;
-    margin-top: 1em;
-    word-spacing: 1em;
 }
 
 a {
@@ -54,15 +51,15 @@ b {
     color: #cfcfcf;
 }
 
-p {
+nav a {
+    display: block;
     clear: both;
-    margin-bottom: 1.1em;
+    margin-bottom: 0.1em;
 }
 
 .slide {
     border: 1px solid black;
     padding: 0em 2em 1em;
-    box-sizing: border-box;
     background-color: #424242;
     width: 100vw;
     height: 100vh;
@@ -91,55 +88,124 @@ h1 {
     display: block;
     background-color: #13131313;
     padding: 0.5em;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
 }
 
 code {
+    font-family: Ubuntu Mono, monospace;
+    margin-top: 0;
+    word-spacing: 0.666em;
+
     display: block;
     white-space: pre-line;
     white-space: pre-wrap;
-    /* break-after: always;
+    break-after: always;
     break-before: always;
-    break-inside: avoid-column; */
+    break-inside: avoid-column;
+}
+
+.navigator {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+}
+.btn {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    fill: #333333;
+    font-size: 42px;
+}
+.btn:hover * {
+    fill: #696969;
+}
+.btn * {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.back {
+    transform: rotateZ(90deg)
+}
+.next {
+    transform: rotateZ(180deg)
 }
      </style>
 </head>
 
 <body>
 
-    <div class="slide set-3-cols" id="Repertório">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-expand" viewBox="0 0 24 24">
+        <g>
+            <path d="M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z"/>
+            <polygon points="13.293 7.293 8.586 12 13.293 16.707 14.707 15.293 11.414 12 14.707 8.707 13.293 7.293"/>
+        </g>
+        </symbol>
+    </svg>
+
+    <div class="navigator">
+        <div class="btn last"><svg><use href="#icon-expand"/></svg></div>
+        <div class="btn back"><svg><use href="#icon-expand"/></svg></div>
+        <div class="btn next"><svg><use href="#icon-expand"/></svg></div>
+    </div>
+
+    <script>
+(function bootstrap() {
+    const elements = (document.querySelectorAll('a'));
+
+    function scroll(element) {
+        var ele = document.getElementById(element);
+        window.scrollTo(ele.offsetLeft, ele.offsetTop);
+    }
+
+    document.querySelector('.btn.back').onclick = () => {
+        scroll('Repertorio');
+    }
+    console.log('loaded');
+})()
+    </script>
+
+    <div class="slide set-3-cols" id="Repertorio">
         <h1>Repertório</h1>
-        <p><a href="#Jota_Quest_-_Do_Seu_Lado">Jota Quest - Do Seu Lado</a></p>
-        <p><a href="#Skank_-_Vou_Deixar">Skank - Vou Deixar</a></p>
-        <p><a href="#Los_Hermanos_-_Ana_Julia">Los Hermanos - Ana Julia</a></p>
-        <p><a href="#LS_Jack_-_Carla">LS Jack - Carla</a></p>
-        <p><a href="#Raimundos_-_Mulher_de_Fases">Raimundos - Mulher de Fases</a></p>
-        <p><a href="#Blur_-_Song_2">Blur - Song 2</a></p>
-        <p><a href="#Mamonas_-_Robocop_Gay">Mamonas - Robocop Gay</a></p>
-        <p><a href="#Billy_Idol_-_Dancing_with_myself">Billy Idol - Dancing with myself</a></p>
-        <p><a href="#Pixies_-_Here_comes_you_man">Pixies - Here comes you man</a></p>
-        <p><a href="#John_Mellencamp_-_Hurts_So_Good">John Mellencamp - Hurts So Good</a></p>
-        <p><a href="#REC_-_Me_Odeie">REC - Me Odeie</a></p>
-        <p><a href="#Barao_-_puro_extase">Barao - puro extase</a></p>
-        <p><a href="#Lulu_Santos_-_Toda_forma">Lulu Santos - Toda forma</a></p>
-        <p><a href="#Roupa_-_Whisky_a_go_go">Roupa - Whisky a go go</a></p>
-        <p><a href="#RPM_-_Radio_pirata">RPM - Radio pirata</a></p>
-        <p><a href="#Maroon_5_-_This_Love">Maroon 5 - This Love</a></p>
-        <p><a href="#Queen_-_I_want_to_break_free">Queen - I want to break free</a></p>
-        <p><a href="#Kings_Of_Leon_-_Sex_on_fire">Kings of Leon - Sex on fire</a></p>
-        <p><a href="#Rock_de_Galpão_-_Amigo_punk">Rock de Galpão - Amigo punk</a></p>
-        <p><a href="#De_Falla_-_Popozuda">De Falla - Popozuda</a></p>
-        <p><a href="#Vera_-_Borracho_y_louco">Vera - Borracho y louco</a></p>
-        <p><a href="#TNT_-_Cachorro_louco">TNT - Cachorro louco</a></p>
-        <p><a href="#Steppenwolf_-_born_to_be_wild">Steppenwolf - born to be wild</a></p>
-        <p><a href="#Kiss_-_rock_and_roll_all_nite">Kiss - rock and roll all nite</a></p>
-        <p><a href="#Bon_Jovi_-_It's_my_life">Bon Jovi - It's my life</a></p>
-        <p><a href="#AC/DC_-_Highway_to_hell">AC/DC - Highway to hell</a></p>
+        <nav>
+            <a href="#Jota_Quest_-_Do_Seu_Lado">Jota Quest - Do Seu Lado</a>
+            <a href="#Skank_-_Vou_Deixar">Skank - Vou Deixar</a>
+            <a href="#Los_Hermanos_-_Ana_Julia">Los Hermanos - Ana Julia</a>
+            <a href="#LS_Jack_-_Carla">LS Jack - Carla</a>
+            <a href="#Raimundos_-_Mulher_de_Fases">Raimundos - Mulher de Fases</a>
+            <a href="#Blur_-_Song_2">Blur - Song 2</a>
+            <a href="#Mamonas_-_Robocop_Gay">Mamonas - Robocop Gay</a>
+            <a href="#Billy_Idol_-_Dancing_with_myself">Billy Idol - Dancing with myself</a>
+            <a href="#Pixies_-_Here_comes_you_man">Pixies - Here comes you man</a>
+            <a href="#John_Mellencamp_-_Hurts_So_Good">John Mellencamp - Hurts So Good</a>
+            <a href="#REC_-_Me_Odeie">REC - Me Odeie</a>
+            <a href="#Barao_-_puro_extase">Barao - puro extase</a>
+            <a href="#Lulu_Santos_-_Toda_forma">Lulu Santos - Toda forma</a>
+            <a href="#Roupa_-_Whisky_a_go_go">Roupa - Whisky a go go</a>
+            <a href="#RPM_-_Radio_pirata">RPM - Radio pirata</a>
+            <a href="#Maroon_5_-_This_Love">Maroon 5 - This Love</a>
+            <a href="#Queen_-_I_want_to_break_free">Queen - I want to break free</a>
+            <a href="#Kings_Of_Leon_-_Sex_on_fire">Kings of Leon - Sex on fire</a>
+            <a href="#Rock_de_Galpão_-_Amigo_punk">Rock de Galpão - Amigo punk</a>
+            <a href="#De_Falla_-_Popozuda">De Falla - Popozuda</a>
+            <a href="#Vera_-_Borracho_y_louco">Vera - Borracho y louco</a>
+            <a href="#TNT_-_Cachorro_louco">TNT - Cachorro louco</a>
+            <a href="#Steppenwolf_-_born_to_be_wild">Steppenwolf - born to be wild</a>
+            <a href="#Kiss_-_rock_and_roll_all_nite">Kiss - rock and roll all nite</a>
+            <a href="#Bon_Jovi_-_It's_my_life">Bon Jovi - It's my life</a>
+            <a href="#AC/DC_-_Highway_to_hell">AC/DC - Highway to hell</a>
+        </nav>
     </div>
 
 
 
     <div class="slide" id="Jota_Quest_-_Do_Seu_Lado">
-        <h2><a href="#Repertório">🗁</a> / Jota Quest - Do Seu Lado </h2>
+        <h2>Jota Quest - Do Seu Lado </h2>
         <code>
 <b>Intro:</b> D5
 D5(9)  Am7  C9  G  G/F#  D5(9)
@@ -148,37 +214,37 @@ C9  G/B  D5(9)
 
 <b>Refrão:</b>
 D5(9)  Am7  C9  G  G/F#  D5(9)
-            <code>
-            </code>
+        </code>
+        <code>
 <b>Riff 1:</b>
-G|------------------------------------|
-D|------------------------------------|
-A|-5-5--3-3-5--3--5--5-5--3-3-5--3-5--|
-E|------------------------------------|
-B|------------------------------------|
-            </code>
-            <code>
+G|------------------------------------------|
+D|------------------------------------------|
+A|-5-5--3-3-5--3--5--5-5--3-3-5--3-5--------|
+E|------------------------------------------|
+B|------------------------------------------|
+        </code>
+        <code>
 <b>Riff 2:</b>
 G|------------------------------------|
 D|--------5-7-10-10-7-5---------------|
 A|---5-7----------------7-5-----------|
 E|-5-------------------------7-5------|
 B|------------------------------------|
-            </code>
-            <code>
+        </code>
+        <code>
 <b>Riff 3:</b>
 G|------------------------------------|
 D|------------------------------------|
 A|-3-3-0-3-0------------5--5--3--5----|
 E|-----------3-3-0-3-0----------------|
 B|---------------------(3)------------|
-            </code>
+        </code>
     </div>
 
 
 
     <div class="slide" id="Skank_-_Vou_Deixar">
-        <h2><a href="#Repertório">🗁</a> / Skank - Vou Deixar </h2>
+        <h2>Skank - Vou Deixar </h2>
         <code>
 <b>Intro:</b> A5 <b>(slide p/ 12ª)</b>
 
@@ -210,7 +276,7 @@ E|-----5-7---7-----5-7---7-5-5--0-2-3--2-5-5--0-2-3-2-|
 
 
     <div class="slide" id="Los_Hermanos_-_Ana_Julia">
-        <h2><a href="#Repertório">🗁</a> / Los Hermanos - Ana Julia </h2>
+        <h2>Los Hermanos - Ana Julia </h2>
         <code>
 G|------------5---------------------------------|
 D|----------5---5-------------------------------| 3x
@@ -258,7 +324,7 @@ B|-------------------------------|
 
 
     <div class="slide" id="LS_Jack_-_Carla">
-        <h2><a href="#Repertório">🗁</a> / LS Jack - Carla </h2>
+        <h2>LS Jack - Carla </h2>
         <code>
 <b>Tom:</b> D
 
@@ -283,7 +349,7 @@ B|--0-----3---5---7-8----------------|
 
 
     <div class="slide" id="Raimundos_-_Mulher_de_Fases">
-        <h2><a href="#Repertório">🗁</a> / Raimundos - Mulher de Fases </h2>
+        <h2>Raimundos - Mulher de Fases </h2>
         <code>
 <b>Tom:</b> D
 
@@ -311,7 +377,7 @@ B|--------------4-------|------------------|  (C#)
 
 
     <div class="slide" id="Blur_-_Song_2">
-        <h2><a href="#Repertório">🗁</a> / Blur - Song 2 </h2>
+        <h2>Blur - Song 2 </h2>
         <code>
 <b>Tom:</b> F <b>(Db)</b>
 
@@ -337,7 +403,7 @@ B|------------------------|
 
 
     <div class="slide" id="Mamonas_-_Robocop_Gay">
-        <h2><a href="#Repertório">🗁</a> / Mamonas - Robocop Gay </h2>
+        <h2>Mamonas - Robocop Gay </h2>
         <code>
 <b>Tom:</b> C
 
@@ -358,7 +424,7 @@ B|-----3-----------------------------------------|
 
 
     <div class="slide" id="Billy_Idol_-_Dancing_with_myself">
-        <h2><a href="#Repertório">🗁</a> / Billy Idol - Dancing with myself </h2>
+        <h2>Billy Idol - Dancing with myself </h2>
         <code>
 <b>Tom:</b> E
 
@@ -378,7 +444,7 @@ B|---------------------------------------------------------|
 
 
     <div class="slide" id="Pixies_-_Here_comes_you_man">
-        <h2><a href="#Repertório">🗁</a> / Pixies - Here comes you man </h2>
+        <h2>Pixies - Here comes you man </h2>
         <code>
 <b>Tom:</b> D
 
@@ -400,7 +466,7 @@ B|------------------------------------------------|
 
 
     <div class="slide" id="John_Mellencamp_-_Hurts_So_Good">
-        <h2><a href="#Repertório">🗁</a> / John Mellencamp - Hurts So Good </h2>
+        <h2>John Mellencamp - Hurts So Good </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -416,7 +482,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="REC_-_Me_Odeie">
-        <h2><a href="#Repertório">🗁</a> / REC - Me Odeie </h2>
+        <h2>REC - Me Odeie </h2>
         <code>
 <b>Tom:</b> D
 
@@ -454,7 +520,7 @@ E|------|---------3----10-9-10-12-10-|
 
 
     <div class="slide" id="Barao_-_puro_extase">
-        <h2><a href="#Repertório">🗁</a> / Barao - puro extase </h2>
+        <h2>Barao - puro extase </h2>
         <code>
 <b>Tom:</b> E
 
@@ -480,7 +546,7 @@ B|-------------------------------------|-------------|---|
 
 
     <div class="slide" id="Lulu_Santos_-_Toda_forma">
-        <h2><a href="#Repertório">🗁</a> / Lulu Santos - Toda forma </h2>
+        <h2>Lulu Santos - Toda forma </h2>
         <code>
 <b>Tom:</b> Em
 
@@ -518,7 +584,7 @@ E----------------------------------------------------|
 
 
     <div class="slide" id="Roupa_-_Whisky_a_go_go">
-        <h2><a href="#Repertório">🗁</a> / Roupa - Whisky a go go </h2>
+        <h2>Roupa - Whisky a go go </h2>
         <code>
 <b>Tom:</b> Eb
 
@@ -546,7 +612,7 @@ E|---------------------------------|
 
 
     <div class="slide" id="RPM_-_Radio_pirata">
-        <h2><a href="#Repertório">🗁</a> / RPM - Radio pirata </h2>
+        <h2>RPM - Radio pirata </h2>
         <code>
 <b>Tom:</b> B
 
@@ -578,7 +644,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Maroon_5_-_This_Love">
-        <h2><a href="#Repertório">🗁</a> / Maroon 5 - This Love </h2>
+        <h2>Maroon 5 - This Love </h2>
         <code>
 <b>Tom:</b> Cm
 
@@ -642,7 +708,7 @@ B|--------------------------------------------|
 
 
     <div class="slide" id="Queen_-_I_want_to_break_free">
-        <h2><a href="#Repertório">🗁</a> / Queen - I want to break free </h2>
+        <h2>Queen - I want to break free </h2>
         <code>
 <b>Tom:</b> E
 E  A  E  B  A  E
@@ -664,7 +730,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Kings_Of_Leon_-_Sex_on_fire">
-        <h2><a href="#Repertório">🗁</a> / King  - Sex on fire </h2>
+        <h2>King  - Sex on fire </h2>
         <code>
 <b>Tom:</b> E
 
@@ -698,7 +764,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Rock_de_Galpão_-_Amigo_punk">
-        <h2><a href="#Repertório">🗁</a> / Rock de Galpão - Amigo punk </h2>
+        <h2>Rock de Galpão - Amigo punk </h2>
         <code>
 <b>Tom:</b> C
 Am  E/G#  G  D/F#  F  E7
@@ -725,7 +791,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="De_Falla_-_Popozuda">
-        <h2><a href="#Repertório">🗁</a> / De Falla - Popozuda </h2>
+        <h2>De Falla - Popozuda </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -739,7 +805,7 @@ E|--------5-8-----5-------8---------------------|
 
 
     <div class="slide" id="Vera_-_Borracho_y_louco">
-        <h2><a href="#Repertório">🗁</a> / Vera - Borracho y louco </h2>
+        <h2>Vera - Borracho y louco </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -755,7 +821,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="TNT_-_Cachorro_louco">
-        <h2><a href="#Repertório">🗁</a> / TNT - Cachorro louco </h2>
+        <h2>TNT - Cachorro louco </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -771,7 +837,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Steppenwolf_-_born_to_be_wild">
-        <h2><a href="#Repertório">🗁</a> / Steppenwolf - born to be wild </h2>
+        <h2>Steppenwolf - born to be wild </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -787,7 +853,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Kiss_-_rock_and_roll_all_nite">
-        <h2><a href="#Repertório">🗁</a> / Kiss - rock and roll all nite </h2>
+        <h2>Kiss - rock and roll all nite </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -803,7 +869,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="Bon_Jovi_-_It's_my_life">
-        <h2><a href="#Repertório">🗁</a> / Bon Jovi  - It's my life </h2>
+        <h2>Bon Jovi  - It's my life </h2>
         <code>
 <b>Tom:</b> D
             <code>
@@ -819,7 +885,7 @@ B|-----------------------------------------------|
 
 
     <div class="slide" id="AC/DC_-_Highway_to_hell">
-        <h2><a href="#Repertório">🗁</a> / AC/DC - Highway to hell </h2>
+        <h2>AC/DC - Highway to hell </h2>
         <code>
 <b>Tom:</b> D
             <code>
