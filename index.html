@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -153,22 +153,6 @@ code {
         <div class="btn back"><svg><use href="#icon-expand"/></svg></div>
         <div class="btn next"><svg><use href="#icon-expand"/></svg></div>
     </div>
-
-    <script>
-(function bootstrap() {
-    const elements = (document.querySelectorAll('a'));
-
-    function scroll(element) {
-        var ele = document.getElementById(element);
-        window.scrollTo(ele.offsetLeft, ele.offsetTop);
-    }
-
-    document.querySelector('.btn.back').onclick = () => {
-        scroll('Repertorio');
-    }
-    console.log('loaded');
-})()
-    </script>
 
     <div class="slide set-3-cols" id="Repertorio">
         <h1>Repertório</h1>
@@ -899,4 +883,31 @@ B|-----------------------------------------------|
     </div>
 
 </body>
+
+<script>
+(function bootstrap() {
+    const elements = (document.querySelectorAll('a'));
+
+    function scroll(element) {
+        var ele = document.getElementById(element);
+        window.scrollTo(ele.offsetLeft, ele.offsetTop);
+    }
+
+    document.querySelector('.btn.back').onclick = () => {
+        scroll('Repertorio');
+    }
+    console.log('loaded');
+
+
+    var Body = document.body;
+
+    var requestMethod = Body.requestFullScreen || Body.webkitRequestFullScreen 
+    || Body.mozRequestFullScreen || Body.msRequestFullScreen;
+
+    if (requestMethod) {
+        // Native full screen.
+        requestMethod.call(Body);
+    }
+})()
+</script>
 </html>
