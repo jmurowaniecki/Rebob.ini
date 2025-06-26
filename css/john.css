@@ -1,45 +1,50 @@
-.lower {
-    text-transform: lowercase !important;
-}
-
 * {
-    box-sizing: border-box;
-    /* border: 1px solid #FF000083 !important; */
+  box-sizing: border-box;
+  /* border: 1px solid #FF000083 !important; */
+  font-size: 16px !important;
 }
 
 code {
-    font-family: Ubuntu Mono, monospace;
-    text-align: left;
-    font-size: 1em;
-    margin-top: 0;
-    word-spacing: 0.666em;
+  font-family: Ubuntu Mono, monospace;
+  text-align: left;
+  font-size: 1em;
+  margin-top: 0;
+  word-spacing: 0.666em;
 
-    display: block;
-    clear: both;
-    white-space: pre-line;
-    white-space: pre-wrap;
-    break-after: always;
-    break-before: always;
-    break-inside: avoid-column;
-    padding-left: 1em !important;
+  display: block;
+  clear: both;
+  white-space: pre-line;
+  white-space: pre-wrap;
+  break-after: always;
+  break-before: always;
+  break-inside: avoid-column;
+  padding-left: 1em !important;
 }
+
 code b {
   color: #1674dbF0;
 }
 
 
+
 body {
-    background: #000 url("../img/noise3.png") repeat !important;
+  background: #000 url("../img/noise3.png") repeat !important;
 }
 
 h1,
 h2 {
-    background: #1674dbF0;
-    column-span: all;
+  background: #1674dbF0;
+  column-span: all;
+  font-size: 30px !important;
 }
 
-section .present {
-    top: -50vh !important;
+/* code {
+  border: 1px solid red !important;
+} */
+
+@media (orientation: landscape) {
+  section .present {
+    /* top: 0 !important; */
 
     column-count: 2;
     column-gap: 1em;
@@ -49,52 +54,69 @@ section .present {
 
     container-type: inline-size;
     column-width: 10rem;
+  }
 }
 
+@media (orientation: portrait) {
+  section .present {
+    /* top: 0 !important; */
+
+    columns: unset;
+    container-type: inline-size;
+  }
+
+  code {
+    width: 100% !important;
+    clear: both;
+  }
+}
+
+
+
 .slides {
-    width: 100vw !important;
+  width: 100vw !important;
 }
 
 nav a {
-    display: block !important;
-    text-align: left;
-    clear: both;
-    margin-bottom: 0.1em;
-    counter-increment: list-number;
+  display: block !important;
+  text-align: left;
+  clear: both;
+  margin-bottom: 0.1em;
+  counter-increment: list-number;
 }
 
 nav a:before {
-    /* counter-increment: list-number; */
-    content: counter(list-number);
-    float: left;
+  /* counter-increment: list-number; */
+  content: counter(list-number);
+  float: left;
 
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 35px;
-    height: 35px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    background-color: #1674dbF0;
-    color: #fff;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background-color: #1674dbF0;
+  color: #fff;
 }
 
 nav {
-    counter-reset: list-number;
-    width: 100%;
-    height: 100%;
-    /* overflow-y: auto; */
+  counter-reset: list-number;
+  width: 100%;
+  /* height: 100%; */
+  /* overflow-y: auto; */
 
-    column-count: 2;
-    column-gap: 1em;
-    column-rule-style: dotted;
-    column-rule-color: #13131333;
-    column-fill: balance;
+  column-count: 2;
+  column-gap: 1em;
+  column-rule-style: dotted;
+  column-rule-color: #13131333;
+  column-fill: balance;
 
-    container-type: inline-size;
-    column-width: 10rem;
-    box-shadow: 1vh #131313;
+  container-type: inline-size;
+  column-width: 10rem;
+  box-shadow: 1vh #131313;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
@@ -104,30 +126,30 @@ nav {
  * Author: Achim Staebler
  */
 @font-face {
-    font-family: 'League Gothic';
-    src: url("../reveal.js/lib/font/league_gothic-webfont.eot");
-    src: url("../reveal.js/lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../reveal.js/lib/font/league_gothic-webfont.woff") format("woff"), url("../reveal.js/lib/font/league_gothic-webfont.ttf") format("truetype"), url("../reveal.js/lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'League Gothic';
+  src: url("../reveal.js/lib/font/league_gothic-webfont.eot");
+  src: url("../reveal.js/lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../reveal.js/lib/font/league_gothic-webfont.woff") format("woff"), url("../reveal.js/lib/font/league_gothic-webfont.ttf") format("truetype"), url("../reveal.js/lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    background: #111111;
-    background-color: #111111;
+  background: #111111;
+  background-color: #111111;
 }
 
 .reveal {
-    font-family: "Lato", sans-serif;
-    font-size: 30px;
-    font-weight: 200;
-    letter-spacing: -0.02em;
-    color: #eeeeee;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: #eeeeee;
 }
 
 ::selection {
-    color: white;
-    background: #1674dbF0;
-    text-shadow: none;
+  color: white;
+  background: #1674dbF0;
+  text-shadow: none;
 }
 
 /*********************************************
@@ -139,64 +161,64 @@ body {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-    margin: 0 0 20px 0;
-    color: #eeeeee;
-    font-family: 'League Gothic', Impact, sans-serif;
-    line-height: 0.9em;
-    letter-spacing: -0.03em;
-    text-transform: none;
-    text-shadow: none;
+  margin: 0 0 20px 0;
+  color: #eeeeee;
+  font-family: 'League Gothic', Impact, sans-serif;
+  line-height: 0.9em;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  text-shadow: none;
 }
 
 .reveal h1 {
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
 /*********************************************
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-    color: #FFF;
-    text-decoration: none;
-    -webkit-transition: color .15s ease;
-    -moz-transition: color .15s ease;
-    -ms-transition: color .15s ease;
-    -o-transition: color .15s ease;
-    transition: color .15s ease;
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease;
 }
 
 .reveal a:not(.image):hover {
-    color: #f3d7ac;
-    text-shadow: none;
-    border: none;
+  color: #f3d7ac;
+  text-shadow: none;
+  border: none;
 }
 
 .reveal .roll span:after {
-    color: #fff;
-    background: #1674dcF0;
-    border-radius: 0;
-    border-left: 1px;
+  color: #fff;
+  background: #1674dcF0;
+  border-radius: 0;
+  border-left: 1px;
 }
 
 /*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
-    margin: 15px 0px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 4px solid #eeeeee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    -webkit-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    -ms-transition: all .2s linear;
-    -o-transition: all .2s linear;
-    transition: all .2s linear;
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eeeeee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
 }
 
 .reveal a:hover img {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #1674dbF0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #1674dbF0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
 }
 
 /*********************************************
@@ -204,52 +226,52 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-    border-right-color: #1674dbF0;
+  border-right-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-    border-left-color: #1674dbF0;
+  border-left-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-    border-bottom-color: #1674dbF0;
+  border-bottom-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-    border-top-color: #1674dbF0;
+  border-top-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-left.enabled:hover {
-    border-right-color: #f3d7ac;
+  border-right-color: #f3d7ac;
 }
 
 .reveal .controls div.navigate-right.enabled:hover {
-    border-left-color: #f3d7ac;
+  border-left-color: #f3d7ac;
 }
 
 .reveal .controls div.navigate-up.enabled:hover {
-    border-bottom-color: #f3d7ac;
+  border-bottom-color: #f3d7ac;
 }
 
 .reveal .controls div.navigate-down.enabled:hover {
-    border-top-color: #f3d7ac;
+  border-top-color: #f3d7ac;
 }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .reveal .progress span {
-    background: #1674dbF0;
-    -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-    -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-    -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-    -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-    transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  background: #1674dbF0;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
