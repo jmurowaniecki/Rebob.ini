@@ -77,7 +77,6 @@ nav a:before {
     justify-content: center;
     font-size: 16px;
     background-color: #1674dbF0;
-    border-radius: 50%;
     color: #fff;
 }
 
@@ -175,7 +174,7 @@ body {
 .reveal .roll span:after {
     color: #fff;
     background: #1674dcF0;
-    border-radius: 50%;
+    border-radius: 0;
     border-left: 1px;
 }
 
