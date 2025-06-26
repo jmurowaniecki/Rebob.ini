@@ -21,7 +21,10 @@ code {
     break-after: always;
     break-before: always;
     break-inside: avoid-column;
-	padding-left: 1em !important;
+    padding-left: 1em !important;
+}
+code b {
+  color: #1674dbF0;
 }
 
 
@@ -29,13 +32,14 @@ body {
     background: #000 url("../img/noise3.png") repeat !important;
 }
 
-h1, h2 {
-    background: rgba(6, 116, 219, 0.1);
-	column-span: all;
+h1,
+h2 {
+    background: #1674dbF0;
+    column-span: all;
 }
 
 section .present {
-	top: -50vh !important;
+    top: -50vh !important;
 
     column-count: 2;
     column-gap: 1em;
@@ -46,17 +50,39 @@ section .present {
     container-type: inline-size;
     column-width: 10rem;
 }
+
 .slides {
-	width: 100vw !important;
+    width: 100vw !important;
 }
 
 nav a {
-    display: block;
+    display: block !important;
+    text-align: left;
     clear: both;
     margin-bottom: 0.1em;
+    counter-increment: list-number;
+}
+
+nav a:before {
+    /* counter-increment: list-number; */
+    content: counter(list-number);
+    float: left;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-color: #1674dbF0;
+    border-radius: 50%;
+    color: #fff;
 }
 
 nav {
+    counter-reset: list-number;
     width: 100%;
     height: 100%;
     /* overflow-y: auto; */
@@ -101,7 +127,7 @@ body {
 
 ::selection {
     color: white;
-    background: #10bdfef0;
+    background: #1674dbF0;
     text-shadow: none;
 }
 
@@ -131,7 +157,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-    color: #10bdfef0;
+    color: #FFF;
     text-decoration: none;
     -webkit-transition: color .15s ease;
     -moz-transition: color .15s ease;
@@ -148,7 +174,9 @@ body {
 
 .reveal .roll span:after {
     color: #fff;
-    background: #350aadc4;
+    background: #1674dcF0;
+    border-radius: 50%;
+    border-left: 1px;
 }
 
 /*********************************************
@@ -168,7 +196,7 @@ body {
 
 .reveal a:hover img {
     background: rgba(255, 255, 255, 0.2);
-    border-color: #10bdfef0;
+    border-color: #1674dbF0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
 }
 
@@ -177,22 +205,22 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-    border-right-color: #10bdfef0;
+    border-right-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-    border-left-color: #10bdfef0;
+    border-left-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-    border-bottom-color: #10bdfef0;
+    border-bottom-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-    border-top-color: #10bdfef0;
+    border-top-color: #1674dbF0;
 }
 
 .reveal .controls div.navigate-left.enabled:hover {
@@ -219,7 +247,7 @@ body {
 }
 
 .reveal .progress span {
-    background: #10bdfef0;
+    background: #1674dbF0;
     -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
     -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
     -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

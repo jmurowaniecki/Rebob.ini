@@ -1,0 +1,41 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[Makefile]
+indent_style = tab
+indent_size = 8
+
+[*.y{a,}ml]
+indent_size = 2
+
+[*.xkb]
+indent_size = 4
+
+[*.py]
+indent_size = 4
+
+[*.json]
+indent_size = 2
+
+[composer.{json,lock}]
+indent_size = 4
+
+[*.go]
+indent_style = tab
+
+[*.{xml,apib,sh,conf,Dockerfile}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.{{j,t}s{,on},{ht,y{,a}}ml,md,css}]
+charset = utf-8
+indent_style = space
+indent_size = 2
