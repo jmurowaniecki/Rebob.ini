@@ -1,0 +1,1 @@
+Clássicos do Rock de várias gerações, levando alto astral em forma de música, te conduzindo aos cantos especiais da tua memória e que te fazem reviver o melhor da vida. Covers e mashups de clássicos especialmente anos 80, 90 e até 2010. Nostalgia bate forte.
